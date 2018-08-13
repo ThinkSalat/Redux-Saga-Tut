@@ -1,15 +1,15 @@
-import loadingReducer from './loadingReducer'
-import imagesReducer from './imagesReducer'
-import errorReducer from './errorReducer'
+import loadingReducer from './loadingReducer';
+import imagesReducer from './imagesReducer';
+import errorReducer from './errorReducer';
 
 import {
-    combinedReducers
+    combineReducers
 } from 'redux';
 
-const rootReducer = combinedReducers({
+const rootReducer = combineReducers({
     isLoading: loadingReducer,
     images: imagesReducer,
     error: errorReducer,
 });
 
-export default rootReducer
+export default rootReducer;
