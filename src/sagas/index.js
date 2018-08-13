@@ -1,14 +1,17 @@
-import { takeEvery, put } from 'redux-saga/effects';
+import { takeEvery, put, take, call } from 'redux-saga/effects';
 
 // worker saga
 function* workerSaga() {
-  console.log('her from workers');
   yield put({type:'ACTION_FROM_WORKER'});
 }
 
 // watcher saga
 function* rootSaga() {
-  yield takeEvery('HELLO', workerSaga);
+  yield take('LOGIN');
+  yield call(workerSaga);
+  // yield take('ADD_TO_CART');
+  // yield take('BUY');
+  yield take('LOGOUT');
 }
 
 // watch saga listens to actions, then invokes worker saga
