@@ -2,9 +2,7 @@ import loadingReducer from './loadingReducer';
 import imagesReducer from './imagesReducer';
 import errorReducer from './errorReducer';
 
-import {
-    combineReducers
-} from 'redux';
+import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
     isLoading: loadingReducer,

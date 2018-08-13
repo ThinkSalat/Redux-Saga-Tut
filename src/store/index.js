@@ -12,9 +12,11 @@ const configureStore = () => {
           applyMiddleware(sagaMiddleware),
           window.__REDUX_DEVTOOLS_EXTENSION__ &&
             window.__REDUX_DEVTOOLS_EXTENSION__()
-        ),
+        )
     );
-    sagaMiddleware.run(rootSaga)
+    sagaMiddleware.run(rootSaga);
+    store.dispatch({type: "HELLO"});
+    
     return store;
 };
 
