@@ -1,3 +1,4 @@
+import imagesSaga from './imagesSaga';
 import { takeEvery, put, take, call } from 'redux-saga/effects';
 
 import { IMAGES } from '../constants';
@@ -7,11 +8,10 @@ function* handleImagesLoad() {
   console.log('getching');
 }
 
-// watcher saga
+// watcher saga: listens for actions and then calls whatever sagas it needs
 function* rootSaga() {
-  takeEvery(IMAGES.LOAD, handleImagesLoad);
+  yield takeEvery(IMAGES.LOAD, handleImagesLoad);
 }
 
-// watcher saga listens to actions, then invokes worker saga
 
-export default rootSaga;
+export default imagesSaga;
