@@ -3,6 +3,7 @@ import { takeEvery, select, put, take, call } from 'redux-saga/effects';
 import { IMAGES } from "../constants";
 import { fetchImages } from '../api';
 import { setImages, setError } from '../actions';
+
 const getPage = state => state.nextPage;
 
 function* handleImagesLoad() {
